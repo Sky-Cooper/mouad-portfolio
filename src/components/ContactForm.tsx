@@ -1,4 +1,3 @@
-// src/components/ContactForm.tsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, User, MessageSquare } from "lucide-react";
@@ -23,8 +22,6 @@ function ContactForm() {
     e.preventDefault();
     setStatus("sending");
 
-    // 🔹 Option 1: EmailJS or backend API integration
-    // For now, just open the default email client as fallback
     const mailto = `mailto:mouadhoumada@gmail.com?subject=Portfolio Contact from ${
       formData.name
     }&body=${encodeURIComponent(
@@ -39,7 +36,6 @@ function ContactForm() {
       id="contact"
       className="relative max-w-5xl px-6 py-24 mx-auto sm:px-8 lg:px-12"
     >
-      {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +46,6 @@ function ContactForm() {
         Let’s Build Something Together
       </motion.h2>
 
-      {/* Form Container */}
       <motion.form
         onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 60 }}
@@ -59,10 +54,8 @@ function ContactForm() {
         viewport={{ once: true }}
         className="relative p-8 border border-orange-500/20 rounded-3xl bg-black/40 backdrop-blur-md shadow-[0_0_40px_-10px_rgba(251,146,60,0.4)] hover:shadow-[0_0_60px_-5px_rgba(251,146,60,0.6)] space-y-6"
       >
-        {/* Floating orange gradient */}
         <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 to-transparent rounded-3xl blur-3xl -z-10"></div>
 
-        {/* Name */}
         <div className="relative">
           <User className="absolute w-5 h-5 text-orange-400 top-3 left-3" />
           <input
@@ -75,7 +68,6 @@ function ContactForm() {
           />
         </div>
 
-        {/* Email */}
         <div className="relative">
           <Mail className="absolute w-5 h-5 text-orange-400 top-3 left-3" />
           <input
@@ -88,7 +80,6 @@ function ContactForm() {
           />
         </div>
 
-        {/* Message */}
         <div className="relative">
           <MessageSquare className="absolute w-5 h-5 text-orange-400 top-3 left-3" />
           <textarea
@@ -101,7 +92,6 @@ function ContactForm() {
           />
         </div>
 
-        {/* Button */}
         <motion.button
           type="submit"
           whileHover={{ scale: 1.05 }}
@@ -122,7 +112,6 @@ function ContactForm() {
         </motion.button>
       </motion.form>
 
-      {/* Decorative floating orbs */}
       <motion.div
         animate={{
           y: [0, -10, 0],
