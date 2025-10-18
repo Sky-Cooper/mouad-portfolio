@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import MouadHoumadaCV from "../assets/mouadhoumadaCV.pdf";
 
 const navItems = [
   { name: "Home", link: "#home" },
@@ -46,7 +47,6 @@ export default function Nav() {
 
       <nav className="relative px-6 mx-auto max-w-7xl sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <a href="#home" className="flex items-center gap-2 group">
             <h1 className="text-2xl font-extrabold text-white select-none sm:text-3xl">
               <span className="text-orange-500 transition-colors group-hover:text-orange-400">
@@ -78,8 +78,8 @@ export default function Nav() {
 
           <div className="flex items-center gap-4">
             <a
-              href="/mouad-cv.pdf"
-              download
+              href={MouadHoumadaCV}
+              download="Mouad_Houmada_CV.pdf"
               className="hidden px-4 py-2 text-orange-200 transition-all duration-300 border border-orange-500 rounded-full md:inline-block bg-orange-500/10 hover:bg-orange-500 hover:text-white"
             >
               Download CV
