@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import MouadHoumadaCV from "../assets/mouadhoumadaCV.pdf";
 
 const navItems = [
   { name: "Home", link: "#home" },
@@ -36,87 +35,11 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleCVDownload = (e: React.MouseEvent) => {
-    e.preventDefault();
-
-    // For mobile devices, we need a different approach
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      // Method 1: Open in new tab for mobile
-      window.open(MouadHoumadaCV, "_blank");
-
-      // Method 2: Create a temporary link and trigger click
-      setTimeout(() => {
-        const link = document.createElement("a");
-        link.href = MouadHoumadaCV;
-        link.download = "Mouad_Houmada_CV.pdf";
-        link.target = "_blank";
-
-        // Append to body, click, and remove
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }, 100);
-    } else {
-      // Standard download for desktop
-      const link = document.createElement("a");
-      link.href = MouadHoumadaCV;
-      link.download = "Mouad_Houmada_CV.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  };
-
-  const handleMobileCVDownload = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setOpen(false); // Close mobile menu
-
-    // For mobile, we'll use a more robust approach
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      // Create a visible link that user can click
-      const downloadLink = document.createElement("a");
-      downloadLink.href = MouadHoumadaCV;
-      downloadLink.download = "Mouad_Houmada_CV.pdf";
-      downloadLink.target = "_blank";
-      downloadLink.style.display = "none";
-
-      document.body.appendChild(downloadLink);
-
-      // Try multiple methods for mobile
-      try {
-        // Method 1: Direct click
-        downloadLink.click();
-
-        // Method 2: Open in new window as fallback
-        setTimeout(() => {
-          window.open(MouadHoumadaCV, "_blank");
-        }, 500);
-      } catch (error) {
-        console.error("Download failed:", error);
-        // Final fallback - open in new tab
-        window.open(MouadHoumadaCV, "_blank");
-      }
-
-      // Clean up
-      setTimeout(() => {
-        document.body.removeChild(downloadLink);
-      }, 1000);
-    } else {
-      // Standard desktop download
-      const link = document.createElement("a");
-      link.href = MouadHoumadaCV;
-      link.download = "Mouad_Houmada_CV.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  };
-
   return (
     <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      initial={{ opacity: 0, y: -20 }} // Start slightly above and invisible
+      animate={{ opacity: 1, y: 0 }} // Animate to normal position
+      transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? "backdrop-blur-xl bg-black/70 border-b border-orange-500/20 shadow-[0_0_30px_-10px_rgba(251,146,60,0.2)]"
@@ -157,12 +80,14 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button
-              onClick={handleCVDownload}
-              className="hidden px-4 py-2 text-orange-200 transition-all duration-300 border border-orange-500 rounded-full cursor-pointer md:inline-block bg-orange-500/10 hover:bg-orange-500 hover:text-white"
+            <a
+              href="/mouadHoumadaCV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden px-4 py-2 text-orange-200 transition-all duration-300 border border-orange-500 rounded-full md:inline-block bg-orange-500/10 hover:bg-orange-500 hover:text-white"
             >
-              Download CV
-            </button>
+              View CV
+            </a>
 
             <button
               className="inline-flex items-center justify-center p-2 text-orange-400 rounded-md md:hidden focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -219,12 +144,13 @@ export default function Nav() {
             </a>
           ))}
 
-          <button
-            onClick={handleMobileCVDownload}
-            className="block w-full px-4 py-2 mt-3 text-center text-orange-200 transition-all border border-orange-500 rounded-full cursor-pointer bg-orange-500/10 hover:bg-orange-500 hover:text-white"
+          <a
+            href="/mouad-cv.pdf"
+            download
+            className="block px-4 py-2 mt-3 text-center text-orange-200 transition-all border border-orange-500 rounded-full bg-orange-500/10 hover:bg-orange-500 hover:text-white"
           >
             Download CV
-          </button>
+          </a>
         </div>
       </div>
     </motion.header>
