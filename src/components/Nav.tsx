@@ -82,11 +82,10 @@ export default function Nav() {
           <div className="flex items-center gap-4">
             <a
               href="/mouadHoumadaCV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Mouad_Houmada_CV.pdf"
               className="hidden px-4 py-2 text-orange-200 transition-all duration-300 border border-orange-500 rounded-full md:inline-block bg-orange-500/10 hover:bg-orange-500 hover:text-white"
             >
-              View CV
+              Download CV
             </a>
 
             <button
@@ -145,11 +144,12 @@ export default function Nav() {
           ))}
 
           <a
-            href="/mouad-cv.pdf"
-            download
-            className="block px-4 py-2 mt-3 text-center text-orange-200 transition-all border border-orange-500 rounded-full bg-orange-500/10 hover:bg-orange-500 hover:text-white"
+            href="/mouadHoumadaCV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden px-4 py-2 text-orange-200 transition-all duration-300 border border-orange-500 rounded-full md:inline-block bg-orange-500/10 hover:bg-orange-500 hover:text-white"
           >
-            Download CV
+            View CV
           </a>
         </div>
       </div>
