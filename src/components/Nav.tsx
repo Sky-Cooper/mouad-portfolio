@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import MouadHoumadaCV from "../../public/mouadHoumadaCV.pdf";
 
 const navItems = [
   { name: "Home", link: "#home" },
@@ -82,7 +81,7 @@ export default function Nav() {
 
           <div className="flex items-center gap-4">
             <a
-              href={MouadHoumadaCV}
+              href="/mouadHoumadaCV.pdf"
               download="Mouad_Houmada_CV.pdf"
               className="hidden px-4 py-2 text-orange-200 transition-all duration-300 border border-orange-500 rounded-full md:inline-block bg-orange-500/10 hover:bg-orange-500 hover:text-white"
             >
