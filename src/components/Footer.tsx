@@ -22,7 +22,7 @@ function Footer() {
           <FaEnvelope size={22} />
         </a>
         <a
-          href="https://github.com/mouadhoumada"
+          href="https://github.com/Sky-Cooper"
           target="_blank"
           rel="noreferrer"
           className="transition text-neutral-400 hover:text-orange-400"
@@ -30,7 +30,7 @@ function Footer() {
           <FaGithub size={22} />
         </a>
         <a
-          href="https://www.linkedin.com/in/mouadhoumada"
+          href="https://www.linkedin.com/in/mouad-houmada-4ba1882b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           target="_blank"
           rel="noreferrer"
           className="transition text-neutral-400 hover:text-orange-400"
