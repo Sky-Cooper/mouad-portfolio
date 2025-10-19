@@ -19,7 +19,6 @@ export default function Nav() {
       setScrolled(window.scrollY > 10);
 
       const scrollPos = window.scrollY + window.innerHeight / 2;
-
       for (let i = navItems.length - 1; i >= 0; i--) {
         const section = document.querySelector(
           navItems[i].link
@@ -35,11 +34,25 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleCVClick = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.open("/mouadHoumadaCV.pdf", "_blank");
+    } else {
+      const link = document.createElement("a");
+      link.href = "/mouadHoumadaCV.pdf";
+      link.download = "Mouad_Houmada_CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
   return (
     <motion.header
-      initial={{ opacity: 0, y: -20 }} // Start slightly above and invisible
-      animate={{ opacity: 1, y: 0 }} // Animate to normal position
-      transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? "backdrop-blur-xl bg-black/70 border-b border-orange-500/20 shadow-[0_0_30px_-10px_rgba(251,146,60,0.2)]"
@@ -80,13 +93,12 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a
-              href="/mouadHoumadaCV.pdf"
-              download="Mouad_Houmada_CV.pdf"
+            <button
+              onClick={handleCVClick}
               className="hidden px-4 py-2 text-orange-200 transition-all duration-300 border border-orange-500 rounded-full md:inline-block bg-orange-500/10 hover:bg-orange-500 hover:text-white"
             >
               Download CV
-            </a>
+            </button>
 
             <button
               className="inline-flex items-center justify-center p-2 text-orange-400 rounded-md md:hidden focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -143,14 +155,15 @@ export default function Nav() {
             </a>
           ))}
 
-          <a
-            href="/mouadHoumadaCV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden px-4 py-2 text-orange-200 transition-all duration-300 border border-orange-500 rounded-full md:inline-block bg-orange-500/10 hover:bg-orange-500 hover:text-white"
+          <button
+            onClick={() => {
+              setOpen(false);
+              handleCVClick();
+            }}
+            className="w-full px-4 py-2 mt-3 text-center text-orange-200 transition-all duration-300 border border-orange-500 rounded-full bg-orange-500/10 hover:bg-orange-500 hover:text-white"
           >
             View CV
-          </a>
+          </button>
         </div>
       </div>
     </motion.header>
