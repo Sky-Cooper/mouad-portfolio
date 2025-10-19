@@ -35,11 +35,24 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleCVClick = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.open("/mouadHoumadaCV.pdf", "_blank");
+    } else {
+      const link = document.createElement("a");
+      link.href = "/mouadHoumadaCV.pdf";
+      link.download = "Mouad_Houmada_CV.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
   return (
     <motion.header
-      initial={{ opacity: 0, y: -20 }} // Start slightly above and invisible
-      animate={{ opacity: 1, y: 0 }} // Animate to normal position
-      transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? "backdrop-blur-xl bg-black/70 border-b border-orange-500/20 shadow-[0_0_30px_-10px_rgba(251,146,60,0.2)]"
@@ -81,8 +94,7 @@ export default function Nav() {
 
           <div className="flex items-center gap-4">
             <a
-              href="/mouadHoumadaCV.pdf"
-              download="Mouad_Houmada_CV.pdf"
+              onClick={handleCVClick}
               className="hidden px-4 py-2 text-orange-200 transition-all duration-300 border border-orange-500 rounded-full md:inline-block bg-orange-500/10 hover:bg-orange-500 hover:text-white"
             >
               Download CV
