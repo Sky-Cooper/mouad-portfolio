@@ -122,7 +122,6 @@ function Body() {
             }}
             className="group relative flex flex-col items-start p-6 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-orange-400 hover:shadow-[0_0_30px_-10px_rgba(251,146,60,0.5)] transition-all duration-300"
           >
-            {/* Animated Icon */}
             <motion.div
               className="mb-4 transition-transform duration-300"
               whileHover={{
@@ -134,7 +133,6 @@ function Body() {
               {skill.icon}
             </motion.div>
 
-            {/* Title */}
             <motion.h3
               className="mb-2 text-xl font-semibold text-white"
               initial={{ opacity: 0, x: -20 }}
@@ -145,7 +143,6 @@ function Body() {
               {skill.title}
             </motion.h3>
 
-            {/* Description */}
             <motion.p
               className="leading-relaxed text-gray-400"
               initial={{ opacity: 0 }}
@@ -156,7 +153,6 @@ function Body() {
               {skill.desc}
             </motion.p>
 
-            {/* Hover Border Effect */}
             <motion.div
               className="absolute inset-0 transition-all duration-500 border-2 border-transparent opacity-0 pointer-events-none rounded-2xl bg-gradient-to-r from-orange-500/0 via-orange-500/20 to-orange-500/0 group-hover:opacity-100"
               whileHover={{ opacity: 1 }}

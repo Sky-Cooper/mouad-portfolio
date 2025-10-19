@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Animated background gradient */
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -18,7 +17,6 @@
   animation: gradientMove 10s ease infinite;
 }
 
-/* Floating glowing particles */
 @keyframes float {
   0% {
     transform: translateY(0) scale(1);

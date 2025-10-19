@@ -9,7 +9,6 @@ const Hero = () => {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Trigger entrance animation after component mounts
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 100);
@@ -36,7 +35,6 @@ const Hero = () => {
     setMousePosition({ x: 0, y: 0 });
   };
 
-  // Calculate transform based on mouse position
   const getTransform = () => {
     const { x, y } = mousePosition;
     const rotateX = y * 10;
@@ -49,7 +47,6 @@ const Hero = () => {
     })`;
   };
 
-  // Calculate glow position based on mouse
   const getGlowPosition = () => {
     const { x, y } = mousePosition;
     const posX = (x + 1) * 50;
@@ -63,7 +60,6 @@ const Hero = () => {
       id="home"
       className="flex flex-col-reverse items-center justify-between gap-12 px-6 py-20 mx-auto max-w-7xl sm:px-8 lg:px-12 md:flex-row"
     >
-      {/* Text Content with Staggered Entrance Animation */}
       <div
         ref={textRef}
         className="max-w-xl text-center md:text-left"
@@ -186,7 +182,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Profile Image with Enhanced Hover Effects */}
       <div
         className="relative flex items-center justify-center"
         onMouseMove={handleMouseMove}
@@ -200,7 +195,6 @@ const Hero = () => {
           transition: "all 0.8s ease-out 0.4s",
         }}
       >
-        {/* Animated Background Glow */}
         <div
           className="absolute transition-all duration-500 rounded-full w-72 h-72 sm:w-96 sm:h-96 blur-3xl opacity-60"
           style={{
@@ -210,12 +204,10 @@ const Hero = () => {
           }}
         />
 
-        {/* Floating Particles */}
         <div className="absolute w-3 h-3 bg-orange-400 rounded-full -top-4 -left-4 animate-float"></div>
         <div className="absolute w-4 h-4 delay-1000 bg-orange-300 rounded-full -bottom-6 -right-6 animate-float"></div>
         <div className="absolute w-2 h-2 delay-500 bg-orange-200 rounded-full top-1/2 -right-8 animate-float"></div>
 
-        {/* Profile Image Container */}
         <div
           ref={imageRef}
           className="relative w-64 h-64 overflow-hidden transition-all duration-300 ease-out rounded-full cursor-pointer sm:w-80 sm:h-80 ring-4 ring-orange-500"
@@ -241,7 +233,6 @@ const Hero = () => {
             }}
           />
 
-          {/* Interactive Overlay */}
           <div
             className="absolute inset-0 transition-all duration-300 opacity-0 bg-gradient-to-tr from-orange-500/20 via-transparent to-orange-300/10"
             style={{
@@ -254,7 +245,6 @@ const Hero = () => {
             }}
           />
 
-          {/* Animated Border */}
           <div
             className="absolute inset-0 border-2 border-transparent rounded-full bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-padding"
             style={{
@@ -266,7 +256,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Custom Animations */}
       <style>{`
         @keyframes float {
           0%, 100% { 

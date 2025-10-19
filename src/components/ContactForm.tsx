@@ -72,7 +72,6 @@ function ContactForm() {
       id="contact"
       className="relative max-w-5xl px-6 py-24 mx-auto sm:px-8 lg:px-12"
     >
-      {/* Title Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +99,6 @@ function ContactForm() {
         </motion.p>
       </motion.div>
 
-      {/* Contact Form */}
       <motion.form
         onSubmit={handleSubmit}
         variants={containerVariants}
@@ -109,7 +107,6 @@ function ContactForm() {
         viewport={{ once: true, margin: "-50px" }}
         className="relative p-8 border border-orange-500/20 rounded-3xl bg-black/40 backdrop-blur-md shadow-[0_0_40px_-10px_rgba(251,146,60,0.4)] hover:shadow-[0_0_60px_-5px_rgba(251,146,60,0.6)] space-y-6 group"
       >
-        {/* Animated Background */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 to-transparent rounded-3xl blur-3xl -z-10"
           animate={{
@@ -123,7 +120,6 @@ function ContactForm() {
           }}
         />
 
-        {/* Name Input */}
         <motion.div
           className="relative"
           variants={itemVariants as any}
@@ -144,7 +140,6 @@ function ContactForm() {
           />
         </motion.div>
 
-        {/* Email Input */}
         <motion.div
           className="relative"
           variants={itemVariants as any}
@@ -165,7 +160,6 @@ function ContactForm() {
           />
         </motion.div>
 
-        {/* Message Input */}
         <motion.div
           className="relative"
           variants={itemVariants as any}
@@ -186,17 +180,15 @@ function ContactForm() {
           />
         </motion.div>
 
-        {/* Submit Button */}
         <motion.button
           type="submit"
-          variants={buttonVariants as any} // only one `variants` prop
+          variants={buttonVariants as any}
           animate={status}
           whileHover={status === "idle" ? { scale: 1.05 } : {}}
           whileTap={{ scale: 0.97 }}
           disabled={status === "sending"}
           className="relative flex items-center justify-center w-full px-6 py-3 mt-4 overflow-hidden font-semibold text-black transition-all duration-300 bg-orange-400 rounded-xl hover:bg-orange-500 disabled:opacity-70"
         >
-          {/* Button Shine Effect */}
           <motion.div
             className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent"
             initial={{ x: "-100%" }}
@@ -222,7 +214,6 @@ function ContactForm() {
         </motion.button>
       </motion.form>
 
-      {/* Floating Background Elements */}
       <motion.div
         animate={{
           y: [0, -20, 0],

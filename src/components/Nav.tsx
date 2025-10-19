@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import MouadHoumadaCV from "../assets/mouadhoumadaCV.pdf";
 
 const navItems = [
@@ -36,7 +37,10 @@ export default function Nav() {
   }, []);
 
   return (
-    <header
+    <motion.header
+      initial={{ opacity: 0, y: -20 }} // Start slightly above and invisible
+      animate={{ opacity: 1, y: 0 }} // Animate to normal position
+      transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? "backdrop-blur-xl bg-black/70 border-b border-orange-500/20 shadow-[0_0_30px_-10px_rgba(251,146,60,0.2)]"
@@ -149,6 +153,6 @@ export default function Nav() {
           </a>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

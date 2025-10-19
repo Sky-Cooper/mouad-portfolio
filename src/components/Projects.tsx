@@ -18,7 +18,6 @@ function Projects() {
       id="projects"
       className="relative px-6 py-24 mx-auto overflow-hidden max-w-7xl sm:px-8 lg:px-12"
     >
-      {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute rounded-full top-1/4 left-1/4 w-72 h-72 bg-orange-500/5 blur-3xl"></div>
         <div className="absolute rounded-full bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/3 blur-3xl"></div>
@@ -52,7 +51,6 @@ function Projects() {
         ))}
       </motion.div>
 
-      {/* Floating Elements */}
       <div className="absolute w-4 h-4 bg-orange-400 rounded-full top-20 right-20 animate-pulse opacity-60"></div>
       <div className="absolute w-3 h-3 bg-orange-300 rounded-full bottom-40 left-10 animate-bounce opacity-40"></div>
       <div className="absolute w-2 h-2 bg-orange-200 rounded-full top-1/2 right-1/4 animate-float opacity-30"></div>
