@@ -153,19 +153,20 @@ const ProjectCard: React.FC<Props> = ({
             )}
 
             {images.length > 1 && (
-              <div className="flex justify-center gap-1 px-2 mt-2 overflow-visible">
-                {images.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToImage(index)}
-                    className={`rounded-full transition-all duration-300 ${
-                      index === currentImageIndex
-                        ? "bg-orange-500 w-4 h-1.5"
-                        : "bg-gray-600 w-1.5 h-1.5 hover:bg-orange-400"
-                    }`}
-                  />
-                ))}
-              </div>
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute flex items-center justify-center w-6 h-6 text-orange-400 transition-all duration-300 transform -translate-y-1/2 border rounded-full opacity-0 left-1 top-1/2 bg-black/80 border-orange-500/30 group-hover:opacity-100 hover:bg-orange-500 hover:text-white"
+                >
+                  <ChevronLeft size={12} />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute flex items-center justify-center w-6 h-6 text-orange-400 transition-all duration-300 transform -translate-y-1/2 border rounded-full opacity-0 right-1 top-1/2 bg-black/80 border-orange-500/30 group-hover:opacity-100 hover:bg-orange-500 hover:text-white"
+                >
+                  <ChevronRight size={12} />
+                </button>
+              </>
             )}
 
             <div className="absolute flex items-center gap-1 px-2 py-1 text-xs font-semibold text-white bg-orange-500 rounded-full shadow-lg -top-2 -right-2">
