@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import MouadHoumadaCV from "../assets/mouadhoumadaCV.pdf";
+import MouadHoumadaCV from "../../public/mouadHoumadaCV.pdf";
 
 const navItems = [
   { name: "Home", link: "#home" },
