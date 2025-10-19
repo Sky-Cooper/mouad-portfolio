@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const techCategories = [
   {
-    title: "⚙️ Backend & APIs",
+    title: "Backend & APIs",
     techs: [
       "Django",
       "Spring Boot",
@@ -16,7 +16,7 @@ const techCategories = [
     ],
   },
   {
-    title: "💻 Frontend & Mobile",
+    title: "Frontend & Mobile",
     techs: [
       "React",
       "React Native",
@@ -28,7 +28,7 @@ const techCategories = [
     ],
   },
   {
-    title: "🧠 DevOps & Databases",
+    title: "DevOps & Databases",
     techs: [
       "Redis",
       "PostgreSQL",
@@ -40,7 +40,7 @@ const techCategories = [
     ],
   },
   {
-    title: "🎨 UI/UX & Branding",
+    title: "UI/UX & Branding",
     techs: [
       "Figma",
       "UI/UX Design",
@@ -50,7 +50,7 @@ const techCategories = [
     ],
   },
   {
-    title: "🧩 Languages",
+    title: "Languages",
     techs: ["Python", "Java", "JavaScript", "TypeScript"],
   },
 ];
