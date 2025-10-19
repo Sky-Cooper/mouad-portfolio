@@ -13,6 +13,7 @@ import {
   movieApp3,
   qreeblikmobileScreenshot5,
   qreeblikmobileScresenshot6,
+  leetCode1,
 } from "../assets/myprojectsAssets/index";
 
 export const projects = [
@@ -122,7 +123,7 @@ export const projects = [
   },
   {
     title: "LeetCode Challenges",
-    images: [],
+    images: [leetCode1],
     role: "Algorithmic Problem Solver",
     description:
       "Solved over 100 algorithmic problems on LeetCode, sharpening problem-solving and data structure mastery across Python and Java.",

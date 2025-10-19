@@ -27,7 +27,7 @@ import xreducation3 from "./xreducation3.png";
 import movieApp1 from "./movieappscreeenshot1.jpg";
 import movieApp2 from "./movieappscreenshot2.jpg";
 import movieApp3 from "./movieappscreenshot3.jpg";
-
+import leetCode1 from "./leetcode.png";
 export {
   autoposting1,
   qreeblikmarketplace1,
@@ -53,4 +53,5 @@ export {
   movieApp1,
   movieApp2,
   movieApp3,
+  leetCode1,
 };
